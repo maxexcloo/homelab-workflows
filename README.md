@@ -1,3 +1,3 @@
-# Homelab Workflows configuration
+# Homelab Workflows
 
-Homelab maintenance workflows, generated and managed by the homelab OpenTofu repository.
+Maintenance workflows and their reviewed configuration live in this repository.
