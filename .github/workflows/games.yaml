@@ -22,12 +22,12 @@ on:
         required: false
         type: string
 
+permissions:
+  contents: read
+
 concurrency:
   cancel-in-progress: false
   group: games
-
-permissions:
-  contents: read
 
 jobs:
   audit:
@@ -76,6 +76,22 @@ jobs:
             echo "Canonical library contains content not covered by reviewed DATs" >&2
             exit 1
           fi
+
+  export:
+    if: inputs.mode == 'export'
+    name: Verify export adapter
+    runs-on: romm-workflows
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Require reviewed RomM export compatibility
+        run: |
+          set -euo pipefail
+          echo "RomM 5.0.0 native ES-DE export must be compatibility-tested before enabling this job." >&2
+          echo "The portable target also requires exact filtering of the ES-DE Portable collection." >&2
+          exit 1
 
   ingest:
     if: inputs.mode == 'ingest'
@@ -255,19 +271,3 @@ jobs:
             echo "At least one source ROM is unknown; library.next is not publishable" >&2
             exit 1
           fi
-
-  export:
-    if: inputs.mode == 'export'
-    name: Verify export adapter
-    runs-on: romm-workflows
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v7
-        with:
-          persist-credentials: false
-      - name: Require reviewed RomM export compatibility
-        run: |
-          set -euo pipefail
-          echo "RomM 5.0.0 native ES-DE export must be compatibility-tested before enabling this job." >&2
-          echo "The portable target also requires exact filtering of the ES-DE Portable collection." >&2
-          exit 1
