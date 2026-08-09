@@ -30,5 +30,5 @@ repos:
       - id: prettier
         name: Check formatting
         entry: mise exec -- prettier --check
-        files: \.(json|yaml)$
+        files: \.(json|md|yaml)$
         language: system

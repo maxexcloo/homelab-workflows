@@ -1,4 +1,5 @@
 {
+  "non_dat_manifests": [],
   "tested_romm_version": "5.0.0",
   "version": 1,
   "exports": [
@@ -16,7 +17,6 @@
     "non_dat": [".chd", ".cso", ".nsp", ".rvz", ".xci"],
     "preserve": [".chd", ".cso", ".nsp", ".rvz", ".xci", ".zip"]
   },
-  "non_dat_manifests": [],
   "paths": {
     "exports": "/games/workflow/exports",
     "inbox": "/games/workflow/staging/inbox",
