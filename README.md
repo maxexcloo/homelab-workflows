@@ -10,12 +10,12 @@ RomM and related clients.
 The `Games` workflow runs on the `romm-workflows` self-hosted runner and uses
 Fresh1G1R DATs with IGIR to identify canonical content.
 
-| Mode | Purpose |
-| --- | --- |
-| `audit` | Check the canonical library and reject content outside the reviewed DATs. |
-| `export` | Reserved for the RomM 5 export adapter; currently fails closed until compatibility is verified. |
-| `ingest` | Validate one inbox batch, reject unknown files or collisions, then publish it atomically. |
-| `inventory` | Report how the configured source directories match the reviewed DATs. |
+| Mode        | Purpose                                                                                         |
+| ----------- | ----------------------------------------------------------------------------------------------- |
+| `audit`     | Check the canonical library and reject content outside the reviewed DATs.                       |
+| `export`    | Reserved for the RomM 5 export adapter; currently fails closed until compatibility is verified. |
+| `ingest`    | Validate one inbox batch, reject unknown files or collisions, then publish it atomically.       |
+| `inventory` | Report how the configured source directories match the reviewed DATs.                           |
 | `reconcile` | Build a verified `library.next` from all configured sources without replacing the live library. |
 
 Run it from **Actions → Games → Run workflow**. Ingest requires an inbox batch
