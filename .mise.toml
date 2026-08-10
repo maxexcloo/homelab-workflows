@@ -1,6 +1,6 @@
 [tools]
 actionlint = "1.7.12"
-prek = "0.4.12"
+prek = "0.4.13"
 prettier = "3.9.6"
 
 [tasks.check]
