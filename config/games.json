@@ -1,7 +1,6 @@
 {
   "non_dat_manifests": [],
   "tested_romm_version": "5.0.0",
-  "version": 1,
   "exports": [
     {
       "name": "es-de-full",
